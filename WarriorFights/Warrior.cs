@@ -84,11 +84,15 @@ namespace WarriorWars
             }
             else
             {
-                if(damage > 5)
+                if(damage > 6)
                 {
                     Console.WriteLine($"{name} attacked with {chooseWeapon} {enemy.name} with critical {damage} damage  was inflicted to {enemy.name}, remaining health of {enemy.name} is {enemy.heatlh}");
-                }
+                } else
+                {
+
+                
                 Console.WriteLine($"{name} attacked with {chooseWeapon} {enemy.name}. {damage} damage  was inflicted to {enemy.name}, remaining health of {enemy.name} is {enemy.heatlh}");
+                }
             }
         }
 

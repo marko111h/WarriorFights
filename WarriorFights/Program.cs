@@ -8,13 +8,14 @@ namespace WarriorWars
        
         static void Main()
         {
+
             Console.WriteLine("Choose Your Fighter ");
             string[] chooseYourFighter = { "Recko", "Bane", "Lalat", "Dragan" };
              string[] chooseWeapon = { "Axe", "Sword", "Polearm" };
             Console.WriteLine("Recko , Bane , Lalat, Dragan");
             string fighter1 =  Console.ReadLine(); ///////
             /////
-            /// loop for cheaking is where our fighter
+            /// loop for looking your fighter
 
             bool f1 = false;
             for (int i = 0; i < chooseYourFighter.Length; i++)
@@ -36,12 +37,17 @@ namespace WarriorWars
             ///// Choose Weapon
 
             Console.WriteLine("Choose Bettle Weapon");
+
+            /// show weapon 
+
             foreach (var item in chooseWeapon)
             {
                 Console.WriteLine(item);
             }
             
             string weapon1 = Console.ReadLine();
+
+            /// select secound figter
 
             Console.WriteLine("Choose Villain ");
 
