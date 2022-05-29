@@ -12,9 +12,12 @@ namespace WarriorWars
             Console.WriteLine("Choose Your Fighter ");
             string[] chooseYourFighter = { "Recko", "Bane", "Lalat", "Dragan" };
              string[] chooseWeapon = { "Axe", "Sword", "Polearm" };
-            Console.WriteLine("Recko , Bane , Lalat, Dragan");
+
+            //// show figters
+            Console.WriteLine(string.Join(" ", chooseYourFighter));
             string fighter1 =  Console.ReadLine(); ///////
-            /////
+            /////choose figter
+            ///
             /// loop for looking your fighter
 
             bool f1 = false;
@@ -40,12 +43,26 @@ namespace WarriorWars
 
             /// show weapon 
 
-            foreach (var item in chooseWeapon)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(string.Join(" ", chooseWeapon));
             
             string weapon1 = Console.ReadLine();
+            string nameOfWeapon1 = weapon1;
+            switch (weapon1)
+            {
+                case "Axe":
+                    weapon1 = "3";
+                    break;
+                case "Sword":
+                    weapon1 = "5";
+                    break;
+                case "Polearm":
+                    weapon1 = "9";
+                    break;
+                default:
+                    break;
+            }
+          int chooseWeapon1 =  int.Parse(weapon1);
+            
 
             /// select secound figter
 
@@ -74,15 +91,30 @@ namespace WarriorWars
 
             Console.WriteLine("Choose Bettle Weapon");
             string weapon2 = Console.ReadLine();
+            string nameOfWeapon2 = weapon2;
 
-          
+            switch (weapon2)
+            {
+                case "Axe":
+                    weapon2 = "3";
+                    break;
+                case "Sword":
+                    weapon2 = "5";
+                    break;
+                case "Polearm":
+                    weapon2 = "9";
+                    break;
+                default:
+                    break;
+            }
+           int chooseWeapon2 = int.Parse(weapon2);
 
 
-          
 
 
-            Warrior goodGuy = new Warrior(fighter1, Faction.GoodGuy, weapon1);
-            Warrior badGuy = new Warrior (fighter2, Faction.BadGuy, weapon2);
+
+            Warrior goodGuy = new Warrior(fighter1, Faction.GoodGuy, chooseWeapon1, nameOfWeapon1);
+            Warrior badGuy = new Warrior (fighter2, Faction.BadGuy, chooseWeapon2, nameOfWeapon2);
 
             while (goodGuy.IsAlive && badGuy.IsAlive)
             {

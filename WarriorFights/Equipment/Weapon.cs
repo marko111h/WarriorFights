@@ -11,7 +11,7 @@ namespace WarriorWars.Equipment
 
         // primitive data types
         private int damage;
-        private string chooseWeapon;
+        private int chooseWeapon;
 
         //property for Weapon
         public int Damage
@@ -21,39 +21,30 @@ namespace WarriorWars.Equipment
                 return damage;
             }
         }
-        public string ChooseWeapon
+        public int ChooseWeapon
         {
             get
             {
-                if (chooseWeapon == "Axe")
-                {
-                    chooseWeapon = "3";
-                }
-                else if (chooseWeapon == "Sword")
-                {
-                    chooseWeapon = "5";
-                }
-                else if (chooseWeapon == "Polearm");
-                {
-                     chooseWeapon = "9";
-                }
+
                 return chooseWeapon;
+                
+              
             }
         }
 
         //constructor
 
-        public Weapon (Faction faction)
+        public Weapon (Faction faction, int chooseWeapon)
         {
-           int wp = int.Parse(ChooseWeapon);
+           
 
             switch (faction)
             {
                 case Faction.GoodGuy:
-                    damage = GOOD_GUY_DAMAGE + wp;
+                    damage = GOOD_GUY_DAMAGE + chooseWeapon;
                     break;
                case Faction.BadGuy:
-                    damage = BAD_GUY_DAMAGE + wp;
+                    damage = BAD_GUY_DAMAGE + chooseWeapon;
                     break;
                default:
                     break;
